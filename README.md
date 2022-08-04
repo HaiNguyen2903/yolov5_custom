@@ -1,3 +1,68 @@
+# Additional guidline for generating data and inference
+
+### Installation
+```bash
+pip install -r requirements.txt
+```
+Note: Create enviroment with python=3.6 first to use same python version
+
+### Generate data for training and inference 
+
+```bash
+data_root
+   |
+   |
+   images_folder_root
+      |
+      |___train
+      |	   |___ img_1.jpg
+      |	   |___ img_2.jpg
+      |	   |___ ...
+      |		
+      |___val
+   |        |___ img_1.jpg
+   |        |___ img_2.jpg
+   |        |___ ...
+   |
+   |
+   |
+   labels_folder_root
+      |
+      |___train
+      |	   |___ img_1.txt
+      |    |___ img_2.txt
+      |	   |___ ...
+      |		
+      |___val
+            |___ img_1.txt
+            |___ img_2.txt
+            |___ ...
+```
+Where each video labels folder is in YOLO label format.
+
+Data config file example:
+```bash
+# Train/val/test sets as 1) dir: path/to/imgs, 2) file: path/to/imgs.txt, or 3) list: [path/to/imgs1, path/to/imgs2, ..]
+path: {data_root}  # dataset root dir
+train: {data_root}/images/train # train images (relative to 'path') 128 images
+val: {data_root}/images/val # val images (relative to 'path') 128 images
+test: # test images (optional)
+
+# Classes
+nc: 2  # number of classes
+names: ['car', 'person']  # class names
+```
+
+Replace above paths with path to your data folders.
+
+### Inference detect script:
+```bash
+python detect.py --weights {path/to/weight} -- source {path/to/image/folder} --data {path/to/data/config} --name {save_name_folder} --save-txt --save-conf
+```
+Result will be automaticly saved to runs/detect/{name}
+
+
+# Author's Tutorial
 <div align="center">
 <p>
    <a align="left" href="https://ultralytics.com/yolov5" target="_blank">
