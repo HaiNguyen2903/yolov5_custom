@@ -12,7 +12,7 @@ Note: Create enviroment with python=3.6 first to use same python version
 data_root
    |
    |
-   images_folder_root
+   images
       |
       |___train
       |	   |___ img_1.jpg
@@ -26,7 +26,7 @@ data_root
    |
    |
    |
-   labels_folder_root
+   labels
       |
       |___train
       |	   |___ img_1.txt
