@@ -1,0 +1,9 @@
+path: /home/ducanh/hain/dataset/car_park_detection_dataset/combine_data_v1  # dataset root dir
+train: /home/ducanh/hain/dataset/car_park_detection_dataset/combine_data_v1/images/train  # train images (relative to 'path') 128 images
+val: /home/ducanh/hain/dataset/car_park_detection_dataset/combine_data_v1/images/val  # val images (relative to 'path') 128 images
+test:  # test images (optional)
+
+# Classes
+nc: 2  # number of classes
+names: ['car', 'person']  # class names
+
